@@ -1,0 +1,140 @@
+Time	SQL
+11:37:05	select * from sprint
+11:37:00	drop table sprint
+11:36:21	ALTER TABLE zadanie ADD CONSTRAINT projekt FOREIGN KEY (projekt) REFERENCES projekt(id_projektu)
+11:36:03	ALTER TABLE zadanie ADD CONSTRAINT fk_zadanie_projekt FOREIGN KEY (projekt) REFERENCES projekt(id_projektu)
+11:35:30	ALTER TABLE zadanie FOREIGN KEY (projekt) REFERENCES projekt(id_projektu)
+11:35:21	ALTER TABLE zadanie Foreign key (projekt) REFERENCES projekt(id_projektu)
+11:32:11	select * from zadanie
+11:32:00	select * from projekt
+11:31:54	DELETE from projekt where id_projektu = 2
+11:31:34	select * from projekt
+11:31:24	DELETE from projekt where id_projektu = 3
+11:29:28	select * from zadanie_has_status
+11:29:23	select * from zadanie_has_Status
+11:29:18	INSERT INTO zadanie_has_status(data_zdarzenia) VALUES('2026-11-11 10:10:00.000')
+11:29:15	INSERT INTO zadanie_has_status(data_zdarzenia) VALUES('2026-11-10 10:10:00.000')
+11:29:08	INSERT INTO zadanie_has_status(data_zdarzenia) VALUES('2026-11-09 10:10:00.000')
+11:28:11	INSERT INTO zadanie_has_status(data_zdarzenia) VALUES()
+11:27:32	select * from zadanie_has_status
+11:27:24	INSERT INTO zadanie_has_status(data_zdarzenia) VALUES(NULL)
+11:23:31	CREATE TABLE zadanie_has_status(
+ id_zdarzenia INT PRIMARY KEY auto_increment,
+ id_zadania smallint REFERENCES zadanie(id_zadania),
+ id_statusu INT references status(id_statusu),
+ data_zdarzenia DATETIME DEFAULT current_timestamp()
+ )
+11:20:50	INSERT INTO status(nazwa_statusu) VALUES ('w toku')
+11:20:45	INSERT INTO status(nazwa_statusu) VALUES ('ukończony')
+11:20:20	INSERT INTO status(nazwa_statusu) VALUES ('niewiadomy')
+11:20:13	INSERT INTO status(nazwa_statusu) VALUES ('niedostępny')
+11:20:05	INSERT INTO status(nazwa_statusu) VALUES ('dostępny')
+11:19:26	CREATE TABLE status (
+     id_statusu INT PRIMARY KEY AUTO_INCREMENT,
+     nazwa_statusu VARCHAR(20)
+ )
+11:18:04	INSERT INTO sprint(id_sprintu, numer_sprintu, data_rozpoczecia, data_zakonczenia) VALUES (NULL, '67','2026-11-09','2026-11-10')
+11:17:55	select * from zadanie
+11:17:40	select * from sprint
+11:16:25	ALTER TABLE zadanie ADD COLUMN sprint smallint NULL REFERENCES sprint(id_sprintu)
+11:14:46	CREATE TABLE sprint(
+ id_sprintu smallint PRIMARY KEY AUTO_INCREMENT,
+ numer_sprintu INT,
+ data_rozpoczecia DATE,
+ data_zakonczenia date
+ )
+11:13:41	select * from zadanie
+11:13:36	UPDATE zadanie SET projekt=3 where id_zadania=3
+11:13:31	UPDATE zadanie SET projekt=2 where id_zadania=2
+11:13:25	UPDATE zadanie SET projekt=1 where id_zadania=1
+11:12:41	select * from zadanie
+11:12:34	ALTER TABLE zadanie ADD COLUMN projekt smallint REFERENCES projekt(id_projektu)
+11:11:03	select * from projekt
+11:10:57	ALTER TABLE projekt_z_polami RENAME to projekt
+11:10:14	INSERT INTO projekt_z_polami(nazwa_projektu,data_rozpoczecia,data_zakonczenia) VALUES ('Spotkanie z klientami','2027-01-03','2027-01-06')
+11:09:22	INSERT INTO projekt_z_polami(nazwa_projektu,data_rozpoczecia,data_zakonczenia) VALUES ('Festyn wakacyjny','2026-06-23','2026-06-24')
+11:09:02	INSERT INTO projekt_z_polami('nazwa_projektu','data_rozpoczecia','data_zakonczenia') VALUES ('Festyn wakacyjny','2026-06-23','2026-06-24')
+11:07:40	select * from projekt_z_polami
+11:07:27	select * from pole_z_projektu
+11:07:05	ALTER TABLE projekt_z_polami ADD COLUMN pole_menadzer_projektu SMALLINT REFERENCES pracownik(id_pracownika)
+11:06:25	ALTER TABLE projekt_z_polami ADD COLUMN pole_menadzer_projektu Foreign Key REFERENCES pracownik(id_pracownika)
+11:05:44	ALTER TABLE projekt_z_polami ADD COLUMN pole_menadzer_projektu Foreign Key(pracownik)
+11:03:54	CREATE TABLE projekt_z_polami(id_projektu SMALLINT PRIMARY KEY AUTO_INCREMENT,
+ nazwa_projektu VARCHAR(150),
+ data_rozpoczecia DATE,
+ data_zakonczenia DATE)
+11:01:24	INSERT INTO zadanie(nazwa_zadania,priorytet,opis,pracownicy) VALUES ('Posprzątanie biura','normalny','Posprzątanie biura po wczorajszej imprezie firmowej','1')
+11:00:28	INSERT INTO zadanie(nazwa_zadania,priorytet,opis,pracownicy) VALUES ('Spotkanie z klientem','wysoki','Spotkanie z klientem oraz odbycie negocjacji odnośnie kontraktu.','3')
+10:59:13	select * from pracownik
+10:59:09	select * from zadanie
+ select * from pracownik
+10:58:58	select * from zadanie
+10:58:49	INSERT INTO zadanie(nazwa_zadania,priorytet,opis,pracownicy) VALUES ('Uporządkowanie faktur','niski','Uporządkowanie faktur w oparciu o date','2')
+10:57:59	INSERT INTO zadanie('nazwa_zadania','priorytet','opis','pracownicy') VALUES ('Uporządkowanie faktur','niski','Uporządkowanie faktur w oparciu o date','2')
+10:57:53	INSERT INTO zadanie('nazwa_zadania','priorytet','opis','pracownicy') VALUES ('Uporządkowanie faktur','niski','Uporządkowanie faktur w oparciu o date',2)
+10:54:50	select * from zadanie
+10:54:36	select * from pracownik
+10:54:19	ALTER TABLE zadanie
+ MODIFY COLUMN priorytet ENUM('normalny','wysoki','niski') DEFAULT 'normalny'
+10:52:59	update zadanie SET zadanie.priorytet DEFAULT= 'normalny'
+10:52:55	update zadanie SET zadanie.priorytet=DEFAULT 'normalny'
+10:52:48	update zadanie SET zadanie.priorytet DEFAULT 'normalny'
+10:51:51	update zadanie.priorytet SET DEFAULT 'normalny'
+10:51:09	CREATE TABLE zadanie(id_zadania smallint PRIMARY KEY AUTO_INCREMENT,
+  nazwa_zadania VARCHAR(150)NOT NULL,
+  priorytet ENUM('normalny','wysoki','niski'),
+  opis LONGTEXT,
+  pracownicy smallint,
+  Foreign key(pracownicy) References pracownik(id_pracownika))
+10:49:41	CREATE TABLE zadanie(id_zadania smallint PRIMARY KEY AUTO_INCREMENT,
+  nazwa_zadania VARCHAR(150)NOT NULL,
+  priorytet ENUM('normalny','wysoki','niski'),
+  opis LONGTEXT,
+  pracownicy varchar(60),
+  Foreign key(pracownicy) References pracownik(id_pracownika))
+10:48:02	CREATE TABLE zadanie(id_zadania smallint PRIMARY KEY AUTO_INCREMENT,
+  nazwa_zadania VARCHAR(150)NOT NULL,
+  priorytet ENUM('normalny','wysoki','niski'),
+  opis LONGTEXT,
+  pracownik varchar(60), Foreign key(pracownik) References pracownik(id_pracownika))
+10:47:44	CREATE TABLE zadanie(id_zadania smallint PRIMARY KEY AUTO_INCREMENT,
+  nazwa_zadania VARCHAR(150)NOT NULL,
+  priorytet ENUM('normalny','wysoki','niski'),
+  opis LONGTEXT,
+  pracownik varchar, Foreign key(pracownik) References pracownik(id_pracownika))
+10:47:24	CREATE TABLE zadanie(id_zadania smallint PRIMARY KEY AUTO_INCREMENT,
+  nazwa_zadania VARCHAR(150)NOT NULL,
+  priorytet ENUM('normalny','wysoki','niski'),
+  opis LONGTEXT, Foreign key(pracownik) References pracownik(id_pracownika))
+10:46:08	CREATE TABLE zadanie(id_zadania smallint PRIMARY KEY AUTO_INCREMENT,
+  nazwa_zadania VARCHAR(150)NOT NULL,
+  priorytet ENUM('normalny','wysoki','niski'),
+  opis LONGTEXT Foreign key(pracownik) References pracownik(id_pracownika))
+10:45:46	CREATE TABLE zadanie(id_zadania PRIMARY KEY AUTO_INCREMENT,
+  nazwa_zadania VARCHAR(150)NOT NULL,
+  priorytet ENUM('normalny','wysoki','niski'),
+  opis LONGTEXT Foreign key(pracownik) References pracownik(id_pracownika))
+10:45:08	CREATE TABLE zadanie(id_zadania PRIMARY KEY AUTO_INCREMENT, nazwa_zadania VARCHAR(150)NOT NULL, priorytet ENUM('normalny','wysoki','niski'), opis LONGTEXT, Foreign key(pracownik) References pracownik(id_pracownika))
+10:39:18	select * from pracownik
+10:39:10	UPDATE pracownik SET data_urodzenia='1991-02-02' WHERE id_pracownika=1
+10:38:13	select * from pracownik
+10:38:06	DELETE FROM pracownik WHERE id_pracownika=4
+10:37:28	select * from pracownik
+10:37:14	delete * from pracownik where pracownik.id_pracownika = 4
+10:37:00	delete * from pracownik where id_pracownika = 4
+10:36:45	select * from pracownik
+10:36:36	insert into pracownik values (NULL, 'Adam', 'Kowalski', '2000-06-07')
+10:36:35	insert into pracownik values (NULL, 'Adam', 'Kowalski', '2000-06-07')
+10:35:51	select * from pracownik
+10:35:31	INSERT INTO pracownik VALUES (NULL,'Kamil', 'Ślimak', '1990-02-02')
+10:35:22	INSERT INTO pracownik VALUES (NULL,'Kamil', 'Ślimak', 1990-02-02)
+10:34:26	select * from pracownik
+10:34:12	INSERT INTO pracownik VALUES (NULL,'Jan','Nowak','1980-01-01')
+10:33:58	INSERT INTO pracownik VALUES ('Jan','Nowak','1980-01-01')
+10:33:50	INSERT INTO pracownik VALUES ('','Jan','Nowak','1980-01-01')
+10:31:13	CREATE TABLE pracownik (
+     id_pracownika SMALLINT PRIMARY KEY AUTO_INCREMENT,
+     imie VARCHAR(40) NOT NULL,
+     nazwisko VARCHAR(60) NOT NULL,
+     data_urodzenia DATE NOT NULL
+ )
