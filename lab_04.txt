@@ -1,0 +1,480 @@
+Time	SQL
+14:07:44	select * from zadanie
+14:07:44	INSERT INTO zadanie( nazwa_zadania, priorytet, opis, id_pracownika)
+ values
+ ('hej',1,'oh','1'),
+ ('nie',1,'not','2'),
+ ('why',1,'now','3')
+14:07:44	alter table zadanie alter column priorytet set default 'normalny'
+14:07:44	INSERT INTO zadanie( nazwa_zadania, priorytet, opis, id_pracownika)
+ values
+ ('mamdosc','wysoki','whatever','2'),
+ ('ilejeszcze','niski','awimmaweawimmawe','3')
+14:07:43	create table zadanie(
+  id_zadania int primary key auto_increment not null,
+     nazwa_zadania varchar(150) not null,
+     priorytet enum('normalny', 'wysoki', 'niski') not null,
+     opis longtext null,
+     id_pracownika int,
+     foreign key(id_pracownika) references pracownik(id_pracownika) on delete set null)
+14:07:43	drop table zadanie
+14:07:29	select * from zadanie
+14:07:29	INSERT INTO zadanie( nazwa_zadania, priorytet, opis, id_pracownika)
+ values
+ ('hej',1,'oh','1'),
+ ('nie',1,'not','2'),
+ ('why',1,'now','2')
+14:07:29	alter table zadanie alter column priorytet set default 'normalny'
+14:07:29	INSERT INTO zadanie( nazwa_zadania, priorytet, opis, id_pracownika)
+ values
+ ('mamdosc','wysoki','whatever','2'),
+ ('ilejeszcze','niski','awimmaweawimmawe','3')
+14:07:29	create table zadanie(
+  id_zadania int primary key auto_increment not null,
+     nazwa_zadania varchar(150) not null,
+     priorytet enum('normalny', 'wysoki', 'niski') not null,
+     opis longtext null,
+     id_pracownika int,
+     foreign key(id_pracownika) references pracownik(id_pracownika) on delete set null)
+14:07:29	drop table zadanie
+14:05:41	select * from zadanie
+14:05:36	INSERT INTO zadanie( nazwa_zadania, priorytet, opis, id_pracownika)
+ values
+ ('hej','wysoki','oh','1'),
+ ('nie','niski','not','2'),
+ ('why','niski','now','2')
+14:05:23	INSERT INTO zadanie( nazwa_zadania, priorytet, opis, id_pracownika)
+ values
+ ('hej','wysoki','oh','1'),
+ ('nie','niski','not','2')
+ ('why','niski','now','2')
+14:02:47	select * from zadanie
+14:02:43	alter table zadanie alter column priorytet set default 'normalny'
+14:02:12	alter table zadanie modify column priorytet set default 'normalny'
+14:01:28	select * from zadanie
+14:01:21	alter table zadanie modify column priorytet enum('normalny', 'wysoki', 'niski') not null default 'normalny'
+13:57:54	select * from zadanie
+13:57:30	INSERT INTO zadanie( nazwa_zadania, priorytet, opis, id_pracownika)
+ values
+ ('mamdosc','wysoki','whatever','2'),
+ ('ilejeszcze','niski','awimmaweawimmawe','3')
+13:57:24	INSERT INTO zadanie( nazwa_zadania, priorytet, opis, id_pracownika)
+ values
+ ('mamdosc','wysoki','whatever','2'),
+ ('ilejeszcze','niski','awimmaweawimmawe','3')
+13:56:41	INSERT INTO zadanie( nazwa_zadania, priorytet, opis, id_pracownika)
+ values
+ ('mamdosc','wysoki','whatever','2'),
+ ('ilejeszcze','niski','awimmaweawimmawe','3')
+ select * from zadanie
+13:56:35	create table zadanie(
+  id_zadania int primary key auto_increment not null,
+     nazwa_zadania varchar(150) not null,
+     priorytet enum('normalny', 'wysoki', 'niski') not null,
+     opis longtext null,
+     id_pracownika int,
+     foreign key(id_pracownika) references pracownik(id_pracownika) on delete set null)
+13:56:32	INSERT INTO zadanie( nazwa_zadania, priorytet, opis, id_pracownika)
+ values
+ ('mamdosc','wysoki','whatever','2'),
+ ('ilejeszcze','niski','awimmaweawimmawe','3')
+ select * from zadanie
+13:56:05	INSERT INTO zadanie( nazwa_zadania, priorytet, opis, id_pracownika)
+ values
+ ('mamdosc','wysoki',null,'2'),
+ ('ilejeszcze','niski','awimmaweawimmawe','3')
+ select * from zadanie
+13:56:01	INSERT INTO zadanie( nazwa_zadania, priorytet, opis, id_pracownika)
+ values
+ ('mamdosc','wysoki',null,'2'),
+ ('ilejeszcze','niski','awimmaweawimmawe','3')
+ select * from zadanie
+13:55:06	INSERT INTO zadanie( nazwa_zadania, priorytet, opis, id_pracownika)
+ values
+ ('mamdosc','wysoki',null,2),
+ ('ilejeszcze','niski','awimmaweawimmawe',3)
+ select * from zadanie
+13:54:58	INSERT INTO zadanie( nazwa_zadania, priorytet, opis, id_pracownika)
+ values
+ ('mamdosc','wysoki',null,2),
+ ('ilejeszcze','niski','awimmaweawimmawe',3)
+ select * from zadanie
+13:47:15	select * from zadanie
+13:47:15	create table zadanie(
+  id_zadania int primary key auto_increment not null,
+     nazwa_zadania varchar(150) not null,
+     priorytet enum('normalny', 'wysoki', 'niski') not null,
+     opis longtext null,
+     id_pracownika int,
+     foreign key(id_pracownika) references pracownik(id_pracownika) on delete set null)
+13:46:44	create table zadanie(
+  id_zadania int primary key auto_increment not null,
+     nazwa_zadania varchar(150) not null,
+     priorytet enum('normalny', 'wysoki', 'niski') not null,
+     opis longtext null,
+     id_pracownika int,
+     foreign key(id_pracownika) references pracownik(id_pracownika) on delete set null
+13:44:30	create table zadanie(
+  id_zadania int primary key auto_increment not null,
+     nazwa_zadania varchar(150) not null,
+     priorytet enum('normalny', 'wysoki', 'niski') not null,
+     opis longtext null,
+     foreign key(id_pracownika) references pracownik(id_pracownika)
+13:42:27	create table zadanie(
+  id_zadania int primary key auto_increment not null,
+     nazwa_zadania varchar(150) not null,
+     priorytet enum('normalny', 'wysoki', 'niski') not null,
+     opis longtext null,
+     foreign key(pracownik)
+13:34:57	select * from pracownik
+13:34:57	update pracownik 
+ set data_urodzenia= "1905-12-25"
+ where id_pracownika=3
+13:34:53	select * from pracownik
+13:34:53	INSERT INTO pracownik(imie, nazwisko, data_urodzenia)
+ VALUES
+  ('mateusz', 'zielony' ,'2007-01-19'),
+  ('Lucjusz', 'Arbiter','1990-10-8'),
+  ('zofia','chmiel','1995-10-03')
+13:34:53	create table pracownik(
+  id_pracownika int primary key auto_increment,
+     imie varchar(40) not null,
+     nazwisko varchar(60) not null,
+     data_urodzenia date not null)
+13:34:40	select * from pracownik
+13:34:35	update pracownik 
+ set data_urodzenia= "1905-12-25"
+ where id_pracownika=3
+13:34:28	DROP TABLE `infio_siejka`.`pracownik`
+13:33:41	select * from pracownik
+13:33:41	update pracownik 
+ set data_urodzenia= "1905-12-25"
+ where id_pracownika=3
+13:33:24	select * from pracownik
+13:33:24	INSERT INTO pracownik(imie, nazwisko, data_urodzenia)
+ VALUES
+  ('mateusz', 'zielony' ,'2007-01-19'),
+  ('Lucjusz', 'Arbiter','1990-10-8'),
+  ('zofia','chmiel','1995-10-03')
+13:33:24	create table pracownik(
+  id_pracownika int primary key auto_increment,
+     imie varchar(40) not null,
+     nazwisko varchar(60) not null,
+     data_urodzenia date not null)
+13:33:24	drop table pracownik
+13:33:18	update pracownik 
+ set data_urodzenia= "1905-12-25"
+ where id_pracownika=3
+13:32:25	update pracownik set "1905-12-25" where id_pracownika=3
+13:29:32	select * from pracownik
+13:29:32	INSERT INTO pracownik(imie, nazwisko, data_urodzenia)
+ VALUES
+  ('mateusz', 'zielony' ,'2007-01-19'),
+  ('Lucjusz', 'Arbiter','1990-10-8'),
+  ('zofia','chmiel','1995-10-03')
+13:29:32	create table pracownik(
+  id_pracownika int primary key auto_increment,
+     imie varchar(40) not null,
+     nazwisko varchar(60) not null,
+     data_urodzenia date not null)
+13:29:32	drop table pracownik
+13:28:32	create table pracownik(
+  id_pracownika int primary key auto_increment,
+     imie varchar(40) not null,
+     nazwisko varchar(60) not null,
+     data_urodzenia date not null)
+13:28:15	select * from pracownik
+13:28:15	INSERT INTO pracownik(imie, nazwisko, data_urodzenia)
+ VALUES
+  ('mateusz', 'zielony' ,'2007-01-19'),
+  ('Lucjusz', 'Arbiter','1990-10-8'),
+  ('zofia','chmiel','1995-10-03')
+13:28:15	create table pracownik(
+  id_pracownika int primary key auto_increment,
+     imie varchar(40) not null,
+     nazwisko varchar(60) not null,
+     data_urodzenia date not null)
+13:28:15	drop table pracownik
+13:27:31	create table pracownik(
+13:26:33	select * from pracownik
+13:26:33	INSERT INTO pracownik(imie, nazwisko, data_urodzenia)
+ VALUES
+  ('mateusz', 'zielony' ,'2007-01-19'),
+  ('Lucjusz', 'Arbiter','1990-10-8'),
+  ('zofia','chmiel','1995-10-03')
+13:26:32	create table pracownik(
+  id_pracownika int primary key auto_increment,
+     imie varchar(40) not null,
+     nazwisko varchar(60) not null,
+     data_urodzenia date not null)
+13:26:32	drop table pracownik
+13:22:23	INSERT INTO pracownik(imie, nazwisko, data_urodzenia) VALUES ('mateusz', 'zielony' ,'2007-01-19')
+13:21:52	INSERT INTO pracownik(imie, nazwisko, data_urodzenia)
+ VALUES
+  ('mateusz', 'zielony' ,'2007-01-19'),
+  ('Lucjusz', 'Arbiter','1990-10-8'),
+  ('zofia','chmiel','1995-10-03')
+13:20:35	drop table if exists pracownik
+ 
+ create table pracownik(
+  id_pracownika int primary key auto_increment,
+     imie varchar(40) not null,
+     nazwisko varchar(60) not null,
+     data_urodzenia date not null)
+13:19:00	drop table if exists pracownik
+ 
+ create table pracownik(
+  id_pracownika int primary key auto_increment,
+     imie varchar(40) not null,
+     nazwisko varchar(60) not null,
+     data_urodzenia date not null)
+13:18:37	create table pracownik(
+  id_pracownika int primary key auto_increment,
+     imie varchar(40) not null,
+     nazwisko varchar(60) not null,
+     data_urodzenia date not null)
+13:17:41	create table pracownik(
+  id_pracownika int primary key auto_increment,
+     imie varchar(40) not null,
+     nazwisko varchar(60) not null,
+     data_urodzenia date not null)
+13:17:27	drop table if exists pracownik
+ 
+ create table pracownik(
+  id_pracownika int primary key auto_increment,
+     imie varchar(40) not null,
+     nazwisko varchar(60) not null,
+     data_urodzenia date not null)
+13:15:47	drop table if exists pracownik
+ 
+ create table if not exists pracownik(
+  id_pracownika int primary key auto_increment,
+     imie varchar(40) not null,
+     nazwisko varchar(60) not null,
+     data_urodzenia date not null)
+13:14:29	INSERT INTO pracownik(imie, nazwisko, data_urodzenia)
+ VALUES
+  ("mateusz", "zielony" ,2007-01-19),
+  ('Lucjusz', 'Arbiter',1990-10-8),
+  ('zofia','chmiel',1995-10-03)
+13:14:29	create table if not exists pracownik(
+  id_pracownika int primary key auto_increment,
+     imie varchar(40) not null,
+     nazwisko varchar(60) not null,
+     data_urodzenia date not null)
+13:13:52	INSERT INTO pracownik(imie, nazwisko, data_urodzenia)
+ VALUES
+  ("mateusz", 'zielony' ,2007-01-19),
+  ('Lucjusz', 'Arbiter',1990-10-8),
+  ('zofia','chmiel',1995-10-03)
+13:13:52	create table if not exists pracownik(
+  id_pracownika int primary key auto_increment,
+     imie varchar(40) not null,
+     nazwisko varchar(60) not null,
+     data_urodzenia date not null)
+13:13:00	INSERT INTO pracownik(imie, nazwisko, data_urodzenia)
+ VALUES
+  ("mateusz", 'zielony' ,2007-01-19),
+  ('Lucjusz', 'Arbiter',1990-10-8),
+  ('zofia','chmiel',1995-10-03)
+13:13:00	create table if not exists pracownik(
+  id_pracownika int primary key auto_increment,
+     imie varchar(40) not null,
+     nazwisko varchar(60) not null,
+     data_urodzenia date not null)
+13:12:00	create table pracownik(
+  id_pracownika int primary key auto_increment,
+     imie varchar(40) not null,
+     nazwisko varchar(60) not null,
+     data_urodzenia date not null)
+13:11:33	create table pracownik(
+  id_pracownika int primary key auto_increment,
+     imie varchar(40) not null,
+     nazwisko varchar(60) not null,
+     data_urodzenia date not null)
+13:10:08	create table pracownik(
+  id_pracownika int primary key auto_increment,
+     imie varchar(40) not null,
+     nazwisko varchar(60) not null,
+     data_urodzenia date not null)
+13:09:56	create table pracownik(
+  id_pracownika int primary key auto_increment,
+     imie varchar(40) not null,
+     nazwisko varchar(60) not null,
+     data_urodzenia date not null)
+13:09:48	create table pracownik(
+  id_pracownika int primary key auto_increment,
+     imie varchar(40) not null,
+     nazwisko varchar(60) not null,
+     data_urodzenia date not null)
+13:08:14	create table pracownik(
+  id_pracownika int primary key auto_increment,
+     imie varchar(40) not null,
+     nazwisko varchar(60) not null,
+     data_urodzenia date not null)
+13:06:37	create table pracownik(
+  id_pracownika int primary key auto_increment,
+     imie varchar(40) not null,
+     nazwisko varchar(60) not null,
+     data_urodzenia date not null)
+13:05:08	create table pracownik(
+  id_pracownika int primary key auto_increment,
+     imie varchar(40) not null,
+     nazwisko varchar(60) not null,
+     data_urodzenia date not null)
+13:04:14	INSERT INTO pracownik(imie, nazwisko ,("mateusz", 'zielinski','2007-01-19'),
+ ('Lucjusz', 'Arbiter','1990-10-8'),('zofia','chmiel',,'1995-10-03'))
+13:04:14	create table pracownik(
+  id_pracownika int primary key auto_increment,
+     imie varchar(40) not null,
+     nazwisko int(60) not null,
+     data_urodzenia date not null)
+12:53:42	create table pracownik(
+  id_pracownika int primary key auto_increment,
+     imie varchar(40) not null,
+     nazwisko int(60) not null,
+     data_urodzenia date not null)
+12:52:23	create table pracownik(
+  id_pracownika int primary key auto_increment,
+     imie varchar(40) not null,
+     nazwisko int(60) not null,
+     data_urodzenia date not null)
+11:37:05	select * from sprint
+11:37:00	drop table sprint
+11:36:21	ALTER TABLE zadanie ADD CONSTRAINT projekt FOREIGN KEY (projekt) REFERENCES projekt(id_projektu)
+11:36:03	ALTER TABLE zadanie ADD CONSTRAINT fk_zadanie_projekt FOREIGN KEY (projekt) REFERENCES projekt(id_projektu)
+11:35:30	ALTER TABLE zadanie FOREIGN KEY (projekt) REFERENCES projekt(id_projektu)
+11:35:21	ALTER TABLE zadanie Foreign key (projekt) REFERENCES projekt(id_projektu)
+11:32:11	select * from zadanie
+11:32:00	select * from projekt
+11:31:54	DELETE from projekt where id_projektu = 2
+11:31:34	select * from projekt
+11:31:24	DELETE from projekt where id_projektu = 3
+11:29:28	select * from zadanie_has_status
+11:29:23	select * from zadanie_has_Status
+11:29:18	INSERT INTO zadanie_has_status(data_zdarzenia) VALUES('2026-11-11 10:10:00.000')
+11:29:15	INSERT INTO zadanie_has_status(data_zdarzenia) VALUES('2026-11-10 10:10:00.000')
+11:29:08	INSERT INTO zadanie_has_status(data_zdarzenia) VALUES('2026-11-09 10:10:00.000')
+11:28:11	INSERT INTO zadanie_has_status(data_zdarzenia) VALUES()
+11:27:32	select * from zadanie_has_status
+11:27:24	INSERT INTO zadanie_has_status(data_zdarzenia) VALUES(NULL)
+11:23:31	CREATE TABLE zadanie_has_status(
+ id_zdarzenia INT PRIMARY KEY auto_increment,
+ id_zadania smallint REFERENCES zadanie(id_zadania),
+ id_statusu INT references status(id_statusu),
+ data_zdarzenia DATETIME DEFAULT current_timestamp()
+ )
+11:20:50	INSERT INTO status(nazwa_statusu) VALUES ('w toku')
+11:20:45	INSERT INTO status(nazwa_statusu) VALUES ('ukończony')
+11:20:20	INSERT INTO status(nazwa_statusu) VALUES ('niewiadomy')
+11:20:13	INSERT INTO status(nazwa_statusu) VALUES ('niedostępny')
+11:20:05	INSERT INTO status(nazwa_statusu) VALUES ('dostępny')
+11:19:26	CREATE TABLE status (
+     id_statusu INT PRIMARY KEY AUTO_INCREMENT,
+     nazwa_statusu VARCHAR(20)
+ )
+11:18:04	INSERT INTO sprint(id_sprintu, numer_sprintu, data_rozpoczecia, data_zakonczenia) VALUES (NULL, '67','2026-11-09','2026-11-10')
+11:17:55	select * from zadanie
+11:17:40	select * from sprint
+11:16:25	ALTER TABLE zadanie ADD COLUMN sprint smallint NULL REFERENCES sprint(id_sprintu)
+11:14:46	CREATE TABLE sprint(
+ id_sprintu smallint PRIMARY KEY AUTO_INCREMENT,
+ numer_sprintu INT,
+ data_rozpoczecia DATE,
+ data_zakonczenia date
+ )
+11:13:41	select * from zadanie
+11:13:36	UPDATE zadanie SET projekt=3 where id_zadania=3
+11:13:31	UPDATE zadanie SET projekt=2 where id_zadania=2
+11:13:25	UPDATE zadanie SET projekt=1 where id_zadania=1
+11:12:41	select * from zadanie
+11:12:34	ALTER TABLE zadanie ADD COLUMN projekt smallint REFERENCES projekt(id_projektu)
+11:11:03	select * from projekt
+11:10:57	ALTER TABLE projekt_z_polami RENAME to projekt
+11:10:14	INSERT INTO projekt_z_polami(nazwa_projektu,data_rozpoczecia,data_zakonczenia) VALUES ('Spotkanie z klientami','2027-01-03','2027-01-06')
+11:09:22	INSERT INTO projekt_z_polami(nazwa_projektu,data_rozpoczecia,data_zakonczenia) VALUES ('Festyn wakacyjny','2026-06-23','2026-06-24')
+11:09:02	INSERT INTO projekt_z_polami('nazwa_projektu','data_rozpoczecia','data_zakonczenia') VALUES ('Festyn wakacyjny','2026-06-23','2026-06-24')
+11:07:40	select * from projekt_z_polami
+11:07:27	select * from pole_z_projektu
+11:07:05	ALTER TABLE projekt_z_polami ADD COLUMN pole_menadzer_projektu SMALLINT REFERENCES pracownik(id_pracownika)
+11:06:25	ALTER TABLE projekt_z_polami ADD COLUMN pole_menadzer_projektu Foreign Key REFERENCES pracownik(id_pracownika)
+11:05:44	ALTER TABLE projekt_z_polami ADD COLUMN pole_menadzer_projektu Foreign Key(pracownik)
+11:03:54	CREATE TABLE projekt_z_polami(id_projektu SMALLINT PRIMARY KEY AUTO_INCREMENT,
+ nazwa_projektu VARCHAR(150),
+ data_rozpoczecia DATE,
+ data_zakonczenia DATE)
+11:01:24	INSERT INTO zadanie(nazwa_zadania,priorytet,opis,pracownicy) VALUES ('Posprzątanie biura','normalny','Posprzątanie biura po wczorajszej imprezie firmowej','1')
+11:00:28	INSERT INTO zadanie(nazwa_zadania,priorytet,opis,pracownicy) VALUES ('Spotkanie z klientem','wysoki','Spotkanie z klientem oraz odbycie negocjacji odnośnie kontraktu.','3')
+10:59:13	select * from pracownik
+10:59:09	select * from zadanie
+ select * from pracownik
+10:58:58	select * from zadanie
+10:58:49	INSERT INTO zadanie(nazwa_zadania,priorytet,opis,pracownicy) VALUES ('Uporządkowanie faktur','niski','Uporządkowanie faktur w oparciu o date','2')
+10:57:59	INSERT INTO zadanie('nazwa_zadania','priorytet','opis','pracownicy') VALUES ('Uporządkowanie faktur','niski','Uporządkowanie faktur w oparciu o date','2')
+10:57:53	INSERT INTO zadanie('nazwa_zadania','priorytet','opis','pracownicy') VALUES ('Uporządkowanie faktur','niski','Uporządkowanie faktur w oparciu o date',2)
+10:54:50	select * from zadanie
+10:54:36	select * from pracownik
+10:54:19	ALTER TABLE zadanie
+ MODIFY COLUMN priorytet ENUM('normalny','wysoki','niski') DEFAULT 'normalny'
+10:52:59	update zadanie SET zadanie.priorytet DEFAULT= 'normalny'
+10:52:55	update zadanie SET zadanie.priorytet=DEFAULT 'normalny'
+10:52:48	update zadanie SET zadanie.priorytet DEFAULT 'normalny'
+10:51:51	update zadanie.priorytet SET DEFAULT 'normalny'
+10:51:09	CREATE TABLE zadanie(id_zadania smallint PRIMARY KEY AUTO_INCREMENT,
+  nazwa_zadania VARCHAR(150)NOT NULL,
+  priorytet ENUM('normalny','wysoki','niski'),
+  opis LONGTEXT,
+  pracownicy smallint,
+  Foreign key(pracownicy) References pracownik(id_pracownika))
+10:49:41	CREATE TABLE zadanie(id_zadania smallint PRIMARY KEY AUTO_INCREMENT,
+  nazwa_zadania VARCHAR(150)NOT NULL,
+  priorytet ENUM('normalny','wysoki','niski'),
+  opis LONGTEXT,
+  pracownicy varchar(60),
+  Foreign key(pracownicy) References pracownik(id_pracownika))
+10:48:02	CREATE TABLE zadanie(id_zadania smallint PRIMARY KEY AUTO_INCREMENT,
+  nazwa_zadania VARCHAR(150)NOT NULL,
+  priorytet ENUM('normalny','wysoki','niski'),
+  opis LONGTEXT,
+  pracownik varchar(60), Foreign key(pracownik) References pracownik(id_pracownika))
+10:47:44	CREATE TABLE zadanie(id_zadania smallint PRIMARY KEY AUTO_INCREMENT,
+  nazwa_zadania VARCHAR(150)NOT NULL,
+  priorytet ENUM('normalny','wysoki','niski'),
+  opis LONGTEXT,
+  pracownik varchar, Foreign key(pracownik) References pracownik(id_pracownika))
+10:47:24	CREATE TABLE zadanie(id_zadania smallint PRIMARY KEY AUTO_INCREMENT,
+  nazwa_zadania VARCHAR(150)NOT NULL,
+  priorytet ENUM('normalny','wysoki','niski'),
+  opis LONGTEXT, Foreign key(pracownik) References pracownik(id_pracownika))
+10:46:08	CREATE TABLE zadanie(id_zadania smallint PRIMARY KEY AUTO_INCREMENT,
+  nazwa_zadania VARCHAR(150)NOT NULL,
+  priorytet ENUM('normalny','wysoki','niski'),
+  opis LONGTEXT Foreign key(pracownik) References pracownik(id_pracownika))
+10:45:46	CREATE TABLE zadanie(id_zadania PRIMARY KEY AUTO_INCREMENT,
+  nazwa_zadania VARCHAR(150)NOT NULL,
+  priorytet ENUM('normalny','wysoki','niski'),
+  opis LONGTEXT Foreign key(pracownik) References pracownik(id_pracownika))
+10:45:08	CREATE TABLE zadanie(id_zadania PRIMARY KEY AUTO_INCREMENT, nazwa_zadania VARCHAR(150)NOT NULL, priorytet ENUM('normalny','wysoki','niski'), opis LONGTEXT, Foreign key(pracownik) References pracownik(id_pracownika))
+10:39:18	select * from pracownik
+10:39:10	UPDATE pracownik SET data_urodzenia='1991-02-02' WHERE id_pracownika=1
+10:38:13	select * from pracownik
+10:38:06	DELETE FROM pracownik WHERE id_pracownika=4
+10:37:28	select * from pracownik
+10:37:14	delete * from pracownik where pracownik.id_pracownika = 4
+10:37:00	delete * from pracownik where id_pracownika = 4
+10:36:45	select * from pracownik
+10:36:36	insert into pracownik values (NULL, 'Adam', 'Kowalski', '2000-06-07')
+10:36:35	insert into pracownik values (NULL, 'Adam', 'Kowalski', '2000-06-07')
+10:35:51	select * from pracownik
+10:35:31	INSERT INTO pracownik VALUES (NULL,'Kamil', 'Ślimak', '1990-02-02')
+10:35:22	INSERT INTO pracownik VALUES (NULL,'Kamil', 'Ślimak', 1990-02-02)
+10:34:26	select * from pracownik
+10:34:12	INSERT INTO pracownik VALUES (NULL,'Jan','Nowak','1980-01-01')
+10:33:58	INSERT INTO pracownik VALUES ('Jan','Nowak','1980-01-01')
+10:33:50	INSERT INTO pracownik VALUES ('','Jan','Nowak','1980-01-01')
+10:31:13	CREATE TABLE pracownik (
+     id_pracownika SMALLINT PRIMARY KEY AUTO_INCREMENT,
+     imie VARCHAR(40) NOT NULL,
+     nazwisko VARCHAR(60) NOT NULL,
+     data_urodzenia DATE NOT NULL
+ )
