@@ -1,0 +1,145 @@
+	#	Time	Action	Message	Duration / Fetch
+0	1	10:17:51	select * from client
+ LIMIT 0, 1000	Error Code: 1146. Table 'infio_kasprzakb.client' doesn't exist	0.000 sec
+0	2	10:18:04	select * from client
+ LIMIT 0, 1000	Error Code: 1146. Table 'company_2025.client' doesn't exist	0.000 sec
+3	3	10:18:22	select * from CLIENT
+ LIMIT 0, 1000	50 row(s) returned	0.016 sec / 0.000 sec
+0	4	10:21:24	create table company_2025 as select * from CLIENT	Error Code: 1142. INSERT, CREATE command denied to user 'infio_kasprzakb'@'localhost' for table 'company_2025'	0.000 sec
+0	5	10:21:39	create table company_2025	Error Code: 1142. CREATE command denied to user 'infio_kasprzakb'@'localhost' for table 'company_2025'	0.000 sec
+0	6	10:21:54	create table company_2026	Error Code: 1142. CREATE command denied to user 'infio_kasprzakb'@'localhost' for table 'company_2026'	0.000 sec
+0	7	10:22:18	create table company_2026 as select * from company_2025.client	Error Code: 1142. INSERT, CREATE command denied to user 'infio_kasprzakb'@'localhost' for table 'company_2026'	0.015 sec
+0	8	10:23:55	create table company_2026 as select * from company_2025.client	Error Code: 1142. INSERT, CREATE command denied to user 'infio_kasprzakb'@'localhost' for table 'company_2026'	0.000 sec
+0	9	10:24:29	create table company_2026 as select * from company_2025.client	Error Code: 1146. Table 'company_2025.client' doesn't exist	0.000 sec
+0	10	10:24:38	create table company_2026 as select * from client	Error Code: 1146. Table 'infio_kasprzakb.client' doesn't exist	0.000 sec
+0	11	10:25:52	select * into infio_kasprzakb.client from company_2025.client	Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.client from company_2025.client' at line 1	0.000 sec
+0	12	10:26:03	select * into infio_kasprzakb.client from company_2025.CLIENT	Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.client from company_2025.CLIENT' at line 1	0.000 sec
+0	13	10:26:27	create table client	Error Code: 1113. A table must have at least 1 column	0.000 sec
+3	14	10:27:11	CREATE TABLE infio_kasprzakb.CLIENT as SELECT * from company_2025.CLIENT	50 row(s) affected
+ Records: 50  Duplicates: 0  Warnings: 0	0.844 sec
+3	15	10:27:39	CREATE TABLE infio_kasprzakb.ORDER as SELECT * from company_2025.ORDER	170 row(s) affected
+ Records: 170  Duplicates: 0  Warnings: 0	0.391 sec
+3	16	10:27:49	CREATE TABLE infio_kasprzakb.EMPLOYEE as SELECT * from company_2025.EMPLOYEE	30 row(s) affected
+ Records: 30  Duplicates: 0  Warnings: 0	0.391 sec
+0	17	10:28:09	SELECT * FROM ORDER	Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER' at line 1	0.000 sec
+3	18	10:28:20	SELECT * FROM infio_kasprzakb.ORDER
+ LIMIT 0, 1000	170 row(s) returned	0.000 sec / 0.000 sec
+3	19	10:28:31	SELECT * FROM infio_kasprzakb.ORDER WHERE ORDER_STATUS = 5
+ LIMIT 0, 1000	10 row(s) returned	0.000 sec / 0.000 sec
+3	20	10:29:55	SELECT ORDER_ID, ORDER_STATUS FROM infio_kasprzakb.ORDER WHERE CLIENT_ID = 1 OR 3 OR 5
+ LIMIT 0, 1000	170 row(s) returned	0.000 sec / 0.000 sec
+0	21	10:33:14	SELECT ORDER_ID, ORDER_STATUS FROM infio_kasprzakb.ORDER WHERE infio_kasprzakb.CLIENT_ID = 1 OR 3 OR 5 INNER JOIN infio_kasprzakb.CLIENT ON infio_kasprzakb.CLIENT.CLIENT_ID = infio_kasprzakb.ORDER.CLIENT_ID	Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INNER JOIN infio_kasprzakb.CLIENT ON infio_kasprzakb.CLIENT.CLIENT_ID = infio_ka' at line 1	0.000 sec
+0	22	10:33:31	SELECT ORDER_ID, ORDER_STATUS FROM infio_kasprzakb.ORDER WHERE infio_kasprzakb.CLIENT_ID = 1 OR 3 OR 5
+ LIMIT 0, 1000	Error Code: 1054. Unknown column 'infio_kasprzakb.CLIENT_ID' in 'where clause'	0.000 sec
+0	23	10:33:41	SELECT ORDER_ID, ORDER_STATUS FROM infio_kasprzakb.ORDER WHERE infio_kasprzakb.CLIENT.CLIENT_ID = 1 OR 3 OR 5
+ LIMIT 0, 1000	Error Code: 1054. Unknown column 'infio_kasprzakb.CLIENT.CLIENT_ID' in 'where clause'	0.000 sec
+0	24	10:33:52	SELECT ORDER_ID, ORDER_STATUS FROM infio_kasprzakb.ORDER WHERE infio_kasprzakb.CLIENT.CLIENT_ID = 1 OR 3 OR 5 INNER JOIN infio_kasprzakb.CLIENT ON infio_kasprzakb.CLIENT.CLIENT_ID = infio_kasprzakb.ORDER.CLIENT_ID	Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INNER JOIN infio_kasprzakb.CLIENT ON infio_kasprzakb.CLIENT.CLIENT_ID = infio_ka' at line 1	0.000 sec
+0	25	10:34:04	SELECT ORDER_ID, ORDER_STATUS FROM infio_kasprzakb.ORDER WHERE infio_kasprzakb.CLIENT.CLIENT_ID = 1 OR 3 OR 5 JOIN infio_kasprzakb.CLIENT ON infio_kasprzakb.CLIENT.CLIENT_ID = infio_kasprzakb.ORDER.CLIENT_ID	Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'JOIN infio_kasprzakb.CLIENT ON infio_kasprzakb.CLIENT.CLIENT_ID = infio_kasprzak' at line 1	0.000 sec
+0	26	10:34:07	SELECT ORDER_ID, ORDER_STATUS FROM infio_kasprzakb.ORDER WHERE infio_kasprzakb.CLIENT.CLIENT_ID = 1 OR 3 OR 5 LEFT JOIN infio_kasprzakb.CLIENT ON infio_kasprzakb.CLIENT.CLIENT_ID = infio_kasprzakb.ORDER.CLIENT_ID	Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LEFT JOIN infio_kasprzakb.CLIENT ON infio_kasprzakb.CLIENT.CLIENT_ID = infio_kas' at line 1	0.000 sec
+0	27	10:34:09	SELECT ORDER_ID, ORDER_STATUS FROM infio_kasprzakb.ORDER WHERE infio_kasprzakb.CLIENT.CLIENT_ID = 1 OR 3 OR 5 RIGHT JOIN infio_kasprzakb.CLIENT ON infio_kasprzakb.CLIENT.CLIENT_ID = infio_kasprzakb.ORDER.CLIENT_ID	Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'RIGHT JOIN infio_kasprzakb.CLIENT ON infio_kasprzakb.CLIENT.CLIENT_ID = infio_ka' at line 1	0.015 sec
+3	28	10:34:42	SELECT ORDER_ID, ORDER_STATUS FROM infio_kasprzakb.ORDER 
+ INNER JOIN infio_kasprzakb.CLIENT ON infio_kasprzakb.CLIENT.CLIENT_ID = infio_kasprzakb.ORDER.CLIENT_ID
+ WHERE infio_kasprzakb.CLIENT.CLIENT_ID = 1 OR 3 OR 5
+ LIMIT 0, 1000	170 row(s) returned	0.016 sec / 0.000 sec
+3	29	10:34:46	SELECT ORDER_ID, ORDER_STATUS FROM infio_kasprzakb.ORDER 
+ INNER JOIN infio_kasprzakb.CLIENT ON infio_kasprzakb.CLIENT.CLIENT_ID = infio_kasprzakb.ORDER.CLIENT_ID
+ WHERE infio_kasprzakb.CLIENT.CLIENT_ID = 1
+ LIMIT 0, 1000	7 row(s) returned	0.000 sec / 0.000 sec
+3	30	10:35:02	SELECT ORDER_ID, ORDER_STATUS FROM infio_kasprzakb.ORDER 
+ INNER JOIN infio_kasprzakb.CLIENT ON infio_kasprzakb.CLIENT.CLIENT_ID = infio_kasprzakb.ORDER.CLIENT_ID
+ WHERE infio_kasprzakb.CLIENT.CLIENT_ID = 1 AND 3 AND 5
+ LIMIT 0, 1000	7 row(s) returned	0.000 sec / 0.000 sec
+0	31	10:35:59	SELECT ORDER_ID, ORDER_STATUS FROM infio_kasprzakb.ORDER 
+ INNER JOIN infio_kasprzakb.CLIENT ON infio_kasprzakb.CLIENT.CLIENT_ID = infio_kasprzakb.ORDER.CLIENT_ID
+ WHERE infio_kasprzakb.CLIENT.CLIENT_ID = 1 AND (infio_kasprzakb.client.client_id = 3 or infio_kasprzak.client.client_id = 5)
+ LIMIT 0, 1000	Error Code: 1054. Unknown column 'infio_kasprzakb.client.client_id' in 'where clause'	0.016 sec
+0	32	10:36:27	SELECT ORDER_ID, ORDER_STATUS FROM infio_kasprzakb.ORDER 
+ INNER JOIN infio_kasprzakb.CLIENT ON infio_kasprzakb.CLIENT.CLIENT_ID = infio_kasprzakb.ORDER.CLIENT_ID
+ WHERE infio_kasprzakb.CLIENT.CLIENT_ID = 1 AND (infio_kasprzakb.CLIENT.CLIENT_ID = 3 or infio_kasprzak.CLIENT.CLIENT_ID= 5)
+ LIMIT 0, 1000	Error Code: 1054. Unknown column 'infio_kasprzak.CLIENT.CLIENT_ID' in 'where clause'	0.000 sec
+0	33	10:36:31	SELECT ORDER_ID, ORDER_STATUS FROM infio_kasprzakb.ORDER 
+ INNER JOIN infio_kasprzakb.CLIENT ON infio_kasprzakb.CLIENT.CLIENT_ID = infio_kasprzakb.ORDER.CLIENT_ID
+ WHERE infio_kasprzakb.CLIENT.CLIENT_ID = 1 AND (infio_kasprzakb.CLIENT.CLIENT_ID = 3 or infio_kasprzak.CLIENT.CLIENT_ID = 5)
+ LIMIT 0, 1000	Error Code: 1054. Unknown column 'infio_kasprzak.CLIENT.CLIENT_ID' in 'where clause'	0.000 sec
+0	34	10:36:42	SELECT ORDER_ID, ORDER_STATUS FROM infio_kasprzakb.ORDER 
+ INNER JOIN infio_kasprzakb.CLIENT ON infio_kasprzakb.CLIENT.CLIENT_ID = infio_kasprzakb.ORDER.CLIENT_ID
+ WHERE infio_kasprzakb.CLIENT.CLIENT_ID = 1 AND infio_kasprzakb.CLIENT.CLIENT_ID = 3 or infio_kasprzak.CLIENT.CLIENT_ID = 5
+ LIMIT 0, 1000	Error Code: 1054. Unknown column 'infio_kasprzak.CLIENT.CLIENT_ID' in 'where clause'	0.000 sec
+3	35	10:36:53	SELECT ORDER_ID, ORDER_STATUS FROM infio_kasprzakb.ORDER 
+ INNER JOIN infio_kasprzakb.CLIENT ON infio_kasprzakb.CLIENT.CLIENT_ID = infio_kasprzakb.ORDER.CLIENT_ID
+ WHERE infio_kasprzakb.CLIENT.CLIENT_ID = 1
+ LIMIT 0, 1000	7 row(s) returned	0.015 sec / 0.000 sec
+3	36	10:37:06	SELECT ORDER_ID, ORDER_STATUS FROM infio_kasprzakb.ORDER 
+ INNER JOIN infio_kasprzakb.CLIENT ON infio_kasprzakb.CLIENT.CLIENT_ID = infio_kasprzakb.ORDER.CLIENT_ID
+ WHERE infio_kasprzakb.CLIENT.CLIENT_ID = 1 OR infio_kasprzakb.CLIENT.CLIENT_ID = 3 OR infio_kasprzakb.CLIENT.CLIENT_ID = 5
+ LIMIT 0, 1000	17 row(s) returned	0.000 sec / 0.000 sec
+3	37	10:37:50	SELECT * FROM EMPLOYEE
+ LIMIT 0, 1000	30 row(s) returned	0.000 sec / 0.000 sec
+3	38	10:38:07	SELECT * FROM EMPLOYEE WHERE FIRST_NAME = "Agnieszka"
+ LIMIT 0, 1000	2 row(s) returned	0.000 sec / 0.000 sec
+3	39	10:38:17	SELECT * FROM EMPLOYEE WHERE FIRST_NAME = "Agnieszka" AND pensja = 3900
+ LIMIT 0, 1000	1 row(s) returned	0.000 sec / 0.000 sec
+3	40	10:38:40	SELECT * FROM EMPLOYEE WHERE pensja BETWEEN 5000 and 7000
+ LIMIT 0, 1000	13 row(s) returned	0.000 sec / 0.000 sec
+3	41	10:39:13	SELECT * FROM CLIENT
+ LIMIT 0, 1000	50 row(s) returned	0.015 sec / 0.000 sec
+3	42	10:39:38	SELECT * FROM CLIENT WHERE SHORT_NAME = "%eco%" AND IS_COMPANY = 1
+ LIMIT 0, 1000	0 row(s) returned	0.000 sec / 0.000 sec
+3	43	10:39:46	SELECT * FROM CLIENT WHERE SHORT_NAME = "*eco*" AND IS_COMPANY = 1
+ LIMIT 0, 1000	0 row(s) returned	0.000 sec / 0.000 sec
+3	44	10:40:19	SELECT * FROM CLIENT WHERE SHORT_NAME LIKE "%eco%" AND IS_COMPANY = 1
+ LIMIT 0, 1000	4 row(s) returned	0.000 sec / 0.000 sec
+0	45	10:40:44	SELECT * FROM ORDER	Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER' at line 1	0.000 sec
+3	46	10:40:55	SELECT * FROM infio_kasprzakb.ORDER
+ LIMIT 0, 1000	170 row(s) returned	0.000 sec / 0.000 sec
+0	47	10:41:50	SELECT * FROM infio_kasprzakb.ORDER WHERE ORDER_DATE LIKE "%-07-%" AND LIKE "%-06-%"	Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIKE "%-06-%"' at line 1	0.031 sec
+3	48	10:42:59	SELECT * FROM infio_kasprzakb.ORDER WHERE ORDER_DATE BETWEEN "2025-06-01" AND "2025-07-31"
+ LIMIT 0, 1000	12 row(s) returned	0.000 sec / 0.000 sec
+3	49	10:43:09	SELECT * FROM infio_kasprzakb.ORDER
+ LIMIT 0, 1000	170 row(s) returned	0.000 sec / 0.000 sec
+3	50	10:43:33	SELECT * FROM CLIENT
+ LIMIT 0, 1000	50 row(s) returned	0.000 sec / 0.000 sec
+0	51	10:44:10	SELECT * FROM CLIENT WHERE TAX_IDENTIFIER NOT NULL ORDER BY SHORT_NAME asc	Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'NULL ORDER BY SHORT_NAME asc' at line 1	0.000 sec
+3	52	10:44:14	SELECT * FROM CLIENT WHERE TAX_IDENTIFIER IS NOT NULL ORDER BY SHORT_NAME asc
+ LIMIT 0, 1000	25 row(s) returned	0.000 sec / 0.000 sec
+3	53	10:44:35	SELECT * FROM EMPLOYEE
+ LIMIT 0, 1000	30 row(s) returned	0.000 sec / 0.000 sec
+3	54	10:44:43	SELECT * FROM EMPLOYEE ORDER BY BIRTH_DATE desc
+ LIMIT 0, 1000	30 row(s) returned	0.000 sec / 0.000 sec
+3	55	10:44:46	SELECT * FROM EMPLOYEE ORDER BY BIRTH_DATE asc
+ LIMIT 0, 1000	30 row(s) returned	0.016 sec / 0.000 sec
+3	56	10:44:50	SELECT * FROM EMPLOYEE ORDER BY BIRTH_DATE asc LIMIT 5	5 row(s) returned	0.000 sec / 0.000 sec
+3	57	10:45:26	SELECT DISTINCT FIRST_NAME from EMPLOYEE
+ LIMIT 0, 1000	27 row(s) returned	0.000 sec / 0.000 sec
+3	58	10:45:53	SELECT * FROM EMPLOYEE
+ LIMIT 0, 1000	30 row(s) returned	0.000 sec / 0.000 sec
+3	59	10:46:15	SELECT FIRST_NAME, LAST_NAME FROM EMPLOYEE WHERE LAST_NAME LIKE "Ko%"
+ LIMIT 0, 1000	3 row(s) returned	0.000 sec / 0.000 sec
+3	60	10:46:37	SELECT * FROM EMPLOYEE
+ LIMIT 0, 1000	30 row(s) returned	0.000 sec / 0.000 sec
+0	61	10:47:53	SELECT LAST_NAME, pensja FROM EMPLOYEE WHERE DATE_OF_EMPLOYEMENT BETWEEN YEAR(2010) AND YEAR(2014)
+ LIMIT 0, 1000	Error Code: 1054. Unknown column 'DATE_OF_EMPLOYEMENT' in 'where clause'	0.000 sec
+3	62	10:48:01	SELECT LAST_NAME, pensja FROM EMPLOYEE WHERE DATE_OF_EMPLOYMENT BETWEEN YEAR(2010) AND YEAR(2014)
+ LIMIT 0, 1000	0 row(s) returned	0.000 sec / 0.000 sec
+3	63	10:48:26	SELECT LAST_NAME, pensja FROM EMPLOYEE WHERE DATE_OF_EMPLOYMENT BETWEEN "2010-01-01" AND "2014-12-31"
+ LIMIT 0, 1000	10 row(s) returned	0.000 sec / 0.000 sec
+3	64	10:48:43	SELECT * FROM EMPLOYEE
+ LIMIT 0, 1000	30 row(s) returned	0.000 sec / 0.000 sec
+3	65	10:48:52	SELECT pensja FROM EMPLOYEE
+ LIMIT 0, 1000	30 row(s) returned	0.000 sec / 0.000 sec
+3	66	10:49:07	SELECT FIRST_NAME, LAST_NAME, pensja FROM EMPLOYEE
+ LIMIT 0, 1000	30 row(s) returned	0.219 sec / 0.000 sec
+3	67	10:49:32	SELECT FIRST_NAME, LAST_NAME, pensja * 0.75 FROM EMPLOYEE
+ LIMIT 0, 1000	30 row(s) returned	0.000 sec / 0.000 sec
+3	68	10:49:39	SELECT FIRST_NAME, LAST_NAME, pensja * 0.75 AS pensja_netto FROM EMPLOYEE
+ LIMIT 0, 1000	30 row(s) returned	0.000 sec / 0.000 sec
+3	69	10:49:49	SELECT FIRST_NAME, LAST_NAME, pensja * 0.25 AS pensja_netto FROM EMPLOYEE
+ LIMIT 0, 1000	30 row(s) returned	0.000 sec / 0.000 sec
+0	70	10:49:55	SELECT FIRST_NAME, LAST_NAME, pensja * 0.25 AS kwota podatku FROM EMPLOYEE	Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'podatku FROM EMPLOYEE' at line 1	0.000 sec
+3	71	10:49:58	SELECT FIRST_NAME, LAST_NAME, pensja * 0.25 AS kwota_podatku FROM EMPLOYEE
+ LIMIT 0, 1000	30 row(s) returned	0.000 sec / 0.000 sec
+3	72	10:50:25	SELECT * FROM infio_kasprzakb.CLIENT WHERE TAX_IDENTIFIER IS NULL
+ LIMIT 0, 1000	25 row(s) returned	0.000 sec / 0.000 sec
+0	73	10:51:31	SELECT infio_kasprzakb.CLIENT.SHORT_NAME WHERE FULL_NAME LIKE "K%" OR FULL_NAME LIKE "%ski" ORDER BY SHORT_NAME asc	Error Code: 1109. Unknown table 'infio_kasprzakb.CLIENT' in field list	0.000 sec
+3	74	10:52:00	SELECT infio_kasprzakb.CLIENT.SHORT_NAME FROM infio_kasprzakb.CLIENT WHERE FULL_NAME LIKE "K%" OR FULL_NAME LIKE "%ski" ORDER BY SHORT_NAME asc
+ LIMIT 0, 1000	8 row(s) returned	0.000 sec / 0.000 sec
